@@ -1,0 +1,507 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: .95rem;
+}
+
+ul, li {
+  list-style-position: inside;
+}
+
+h3 {
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+button {
+  border: none;
+  background: #265f82;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  transition: background .3s ease;
+}
+
+button:hover {
+  border: none;
+  background: #1F4C69;
+  color: white;
+  padding: 10px;
+}
+
+button:disabled {
+  cursor: default;
+  background: #698ea5;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* Log in pop up */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.cancelbtn:hover{
+  background: white;
+  color: #f44336;
+  width: auto;
+  padding: 10px 18px;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 20%;
+}
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /* overflow: auto; /* Enable scroll if needed*/ */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+.banner{
+    /*  margin: 20px 0px; */
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    border-style: none none double none
+}
+
+.body{
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.top_container{
+  height: 70px;
+  width: 100%;
+  border-style: none none double none;
+
+  z-index: 1;
+  /* background-color: #202020; */
+}
+.bottom_container{
+  position: absolute;
+  bottom: 0px;
+  height: 5vh;
+  width: 100%;
+  background: -moz-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(49,84,129,1)), color-stop(100%, rgba(39,107,130,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ie10+ */
+  background: linear-gradient(325deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* w3c */
+}
+.logo{
+  position: absolute;
+  left: 10px;
+  margin: 0px;
+
+}
+
+
+.login_button{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #265f82;
+  border-radius: 16px;
+  position: absolute;
+  top: 17px;
+  right: 100px;
+  width: 80px;
+  background: white;
+  color: #265f82;
+}
+
+.guest_login{
+  border-radius: 16px;
+  position: absolute;
+  top: 17px;
+  right: 200px;
+  width: 80px;
+}
+
+.guest_login:hover{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #265f82;
+  background: white;
+  color: #265f82;
+}
+
+.dropbtn{
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    top: 70px;
+    min-width: 75vw;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.body_container {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  background: rgba(250, 250, 250, 0.8);
+  z-index: 0;
+
+}
+
+.signup_button{
+  position: absolute;
+  top: 70%;
+  right: 15%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 16px;
+  font-size: 1vw;
+  width: 7%;
+  height: 8%;
+  z-index: 1;
+  max-width: 100%;
+}
+.signup_button:hover{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #265f82;
+  background: white;
+  color: #265f82;
+  font-size: 1vw;
+  z-index: 2;
+}
+
+.learnMore_button{
+  position: absolute;
+  top: 70%;
+  right: 25%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #265f82;
+  background: white;
+  color: #265f82;
+  border-radius: 16px;
+  font-size: 1vw;
+  width: 7%;
+  height: 8%;
+  z-index: 1;
+}
+
+.learnMore_button:hover{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 16px;
+  font-size: 1vw;
+  width: 7%;
+  height: 8%;
+  z-index: 1;
+}
+
+
+.mainBanner{
+  position: absolute;
+  top: 71px;
+  width: 100%
+}
+
+.centered-form__form {
+  position: absolute;
+  top: 70px;
+  /* height: 100%; */
+  background: rgba(250, 250, 250, 0.9);
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding: 0px 20px;
+  margin: 20px;
+
+}
+
+.form-field {
+  display: relative;
+  margin: 20px 0;
+}
+
+.form-field > * {
+  width: 100%;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.form-field input, .form-field select {
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+}
+
+.chat {
+  display: flex;
+}
+
+.chat__sidebar {
+  overflow-y: scroll;
+  width: 260px;
+  height: 100vh;
+  background: -moz-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(49,84,129,1)), color-stop(100%, rgba(39,107,130,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ie10+ */
+  background: linear-gradient(325deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* w3c */
+}
+
+.chat__sidebar h3 {
+  color: #e6eaee;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.chat__sidebar ul {
+  list-style-type: none;
+}
+
+.chat__sidebar li {
+  background: #e6eaee;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.body__main{
+  height: 100vh;
+  width: 100%;
+  background-color: #f1f1f1 ;
+}
+.map__main{
+    height:100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+.markerButton{
+  position: absolute;
+  border-style: double;
+  border-color: black;
+  top: 60%;
+  right: 1%;
+  z-index: 3;
+}
+
+.markerButton:hover{
+  border-style: double;
+  border-color: black;
+}
+
+.chat__main {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 40%;
+  bottom: 10px;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  position: absolute;
+  bottom: 10px;
+  left: 220px;
+}
+
+.chat__messages {
+  flex-grow: 1;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 3;
+}
+
+.chat__footer {
+  background: #e6eaee;
+  display: flex;
+  padding: 10px;
+  /*height: 60px;*/
+  flex-shrink: 0;
+}
+
+.chat__footer form {
+  flex-grow: 1;
+  display: flex;
+}
+
+.chat__footer form * {
+  margin-right: 10px;
+}
+
+.chat__footer input {
+  border: none;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.chat__messages {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.message {
+  padding: 10px;
+  z-index: 2;
+  color: white;
+  border: black;
+  -webkit-text-stroke: .2px black;
+}
+
+.message__title {
+  display: flex;
+  margin-bottom: 5px;
+  z-index: 2;
+}
+
+.message__title h4 {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.message__title span {
+  color: #999;
+}
+
+@media (max-width: 600px) {
+  * {
+    font-size: 1rem;
+  }
+
+  .chat__sidebar {
+    display: none;
+  }
+
+  .chat__footer {
+    flex-direction: column;
+  }
+
+  .chat__footer form {
+    margin-bottom: 10px;
+  }
+
+  .chat__footer button {
+    margin-right: 0px;
+  }
+}

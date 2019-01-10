@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Join | ChatApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="body">
+
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/mapchat.html">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="resources/name.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button id = "userLogin"  type="submit">Login</button>
+        <label position="right">
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+  <div class="body_container">
+
+    <div class="top_container">
+
+        <p class ="logo"><a href=mapchat.html><img src="resources/logo_name.png" alt="" height="65" width="180" align="left"/></a></p>
+        <button onclick="document.getElementById('id01').style.display='block'" class ="login_button">Log In</button>
+        <button onclick="document.getElementById('id01').style.display='block'" class ="guest_login">Guest</button>
+        <div class ="dropdown">
+          <img src="resources/menu_dropdown_icon.png" id = "menu_dropdown_icon" height="67" width="67" onclick="dropbtnFunction()" class="dropbtn" />
+          <div id="myDropdown" class ="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+
+    </div>
+
+  <div class = "mainBanner">
+    <img src="resources/banner.png" alt="" class="banner" >
+    <button onclick="document.getElementById('id01').style.display='block'" class ="signup_button">Sign Up</button>
+    <button onclick="" class ="learnMore_button">Learn More</button>
+
+  </div>
+    <div class="centered-form__form">
+
+    </div>
+<div class="bottom_container">
+</div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/libs/jquery-3.3.1.min.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/libs/deparam.js"></script>
+</body>
+
+</html>
